@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HIGHCON.GVEI.MOBILE.PopUp"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
+
+    <StackLayout Margin="12"
+                 Padding="24"
+                 Spacing="24"
+                 BackgroundColor="White"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"       
+                 >
+        <Image Source="logo.png"/>
+        
+        <StackLayout >
+            <Label Text="Login"/>
+            <Entry FontSize="30"
+                   Placeholder="user@gmail.com"
+                   x:Name="user"/>
+        </StackLayout>
+        <StackLayout >
+            <Label Text="Password"/>
+            <Entry FontSize="30"
+                   IsPassword="True"
+                   Placeholder="Password"
+                   x:Name="senha"/>
+        </StackLayout>
+        <Button TextColor="White"
+                FontSize="30"
+                Text="entrar"
+                BackgroundColor="#00e2ff"
+                Clicked="Handle_Clicked"/>
+   
+    </StackLayout>
+
+</pages:PopupPage>
