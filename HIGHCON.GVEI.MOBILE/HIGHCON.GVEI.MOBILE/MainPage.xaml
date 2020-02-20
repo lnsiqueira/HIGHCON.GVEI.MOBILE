@@ -11,8 +11,7 @@
      
         <StackLayout BackgroundColor="White">
             <Image Margin="0,200,0,0" WidthRequest="330" Source="logo1.png"/>
-            <Button TextColor="White" Text="         Login         " BorderWidth="500" Margin="0,50,0,0" HorizontalOptions="Center" Clicked="OpenPopup" BackgroundColor="#00e2ff" />
-            <Button Text="Ok" Clicked="ClickedOk" />
+            <Button TextColor="White"  CornerRadius="40" Text="Login" WidthRequest="125" HeightRequest="50" Margin="0,50,0,0" HorizontalOptions="Center" Clicked="OpenPopup" BackgroundColor="#00e2ff" />
         </StackLayout>
 
     </StackLayout>

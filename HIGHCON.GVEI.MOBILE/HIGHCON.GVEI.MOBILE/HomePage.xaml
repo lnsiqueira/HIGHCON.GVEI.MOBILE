@@ -5,12 +5,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:pages="clr-namespace:HIGHCON.GVEI.MOBILE.Views"
              mc:Ignorable="d"
-             x:Class="HIGHCON.GVEI.MOBILE.HomePage">
+             x:Class="HIGHCON.GVEI.MOBILE.HomePage"
+             Title="   Nenê Gragnano Automóveis">
 
 
-    <pages:CarPage Title="Carros" Icon="mais.png" />
-    <!--<pages:InfoPage Title="Editar" Icon="editar.png"/>
-    <pages:ReservaPage Title="Pesquisar" Icon="pesquisar.png"/>-->
-
+    <pages:NewCarPage Title="Carros" Icon="iconCar.png" />
+    <pages:ConsultPage Title="Consultar" Icon="iconConsultCar.png" />
+    <pages:AccountPage Title="Contas" Icon="iconConta.png"/>
 
 </TabbedPage>

@@ -15,6 +15,17 @@ namespace HIGHCON.GVEI.MOBILE
         public HomePage()
         {
             InitializeComponent();
+
+            //CurrentPageChanged += CurrentPageHasChanged;
+
+            var pages = Children.GetEnumerator();
+            pages.MoveNext(); // First page
+            pages.MoveNext(); // Second page
+            CurrentPage = pages.Current;
+
+
         }
+
+        //private void CurrentPageHasChanged(object sender, EventArgs e) => Title = CurrentPage.Title;
     }
 }

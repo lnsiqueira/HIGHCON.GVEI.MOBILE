@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace HIGHCON.GVEI.MOBILE.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CarPage : ContentPage
+    public partial class AccountPage : ContentPage
     {
-        public CarPage()
+        public AccountPage()
         {
             InitializeComponent();
         }

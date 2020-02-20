@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:controls="clr-namespace:HIGHCON.GVEI.MOBILE.Controls"
+             x:Class="HIGHCON.GVEI.MOBILE.Views.ConsultPage"
+             Title="Consultar"
+             >
+
+    <ContentPage.Content>
+        <controls:ListView
+            ItemsSource="{Binding Cars}"
+            HasUnevenRows="True"
+            ItemTappedCommand="{Binding GoToDetailsCommand}"
+            BackgroundColor="Azure"
+            IsPullToRefreshEnabled="True"
+            RefreshCommand="{Binding RefreshCommand}"
+            IsRefreshing="{Binding IsRefreshing}"
+            x:Name="listCars" 
+            >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Grid HeightRequest="100" RowSpacing="0" Margin="10,10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <FlexLayout
+                                    Grid.Row="0" BackgroundColor="Silver" Direction="Row" AlignItems="Start" >
+                                    <StackLayout Spacing="0" FlexLayout.Grow="1">
+                                        <Label Text="Veiculo/Marca" TextColor="Gray" />
+                                        <Label Text="{Binding veiculo}" TextColor="Black"  />
+                                    </StackLayout>
+                                </FlexLayout>
+
+                                <FlexLayout
+                                    Grid.Row="1" Padding="10, 0 ,30, 15" BackgroundColor="Silver" Direction="Row" AlignItems="Center" >
+                                    <StackLayout Spacing="0" FlexLayout.Grow="1">
+                                        <Label  Text="Ano" TextColor="Gray"/>
+                                        <Label FontSize="Micro"  Text="{Binding ano}" FontAttributes="Bold"/>
+                                    </StackLayout>
+
+                                    <StackLayout Spacing="0" FlexLayout.Grow="2" >
+                                        <Label Text="Cor" TextColor="Gray"/>
+                                        <Label FontSize="Micro"  Text="{Binding cor}" FontAttributes="Bold"/>
+                                    </StackLayout>
+
+                                    <StackLayout Spacing="0"   FlexLayout.Grow="2">
+                                        <Label Text="Placa" TextColor="Gray"/>
+                                        <Label FontSize="Micro" Text="{Binding placa}" FontAttributes="Bold"/>
+                                    </StackLayout>
+
+                                    <StackLayout Spacing="0"   FlexLayout.Grow="2">
+                                        <Label Text="Vlr. Compra" TextColor="Gray" HorizontalTextAlignment="End"/>
+                                        <Label FontSize="Micro" Text="{Binding valorCompra,StringFormat='{0:C2}'}" FontAttributes="Bold" HorizontalTextAlignment="End"/>
+                                    </StackLayout>
+
+                                    <StackLayout Spacing="0"   FlexLayout.Grow="2">
+                                        <Label Text="Vlr. Venda" TextColor="Gray" HorizontalTextAlignment="End"/>
+                                        <Label FontSize="Micro"  Text="{Binding valorVenda, StringFormat='{0:C2}'}" FontAttributes="Bold" HorizontalTextAlignment="End"/>
+                                    </StackLayout>
+                                </FlexLayout>
+                            </Grid>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </controls:ListView>
+    </ContentPage.Content>
+</ContentPage>

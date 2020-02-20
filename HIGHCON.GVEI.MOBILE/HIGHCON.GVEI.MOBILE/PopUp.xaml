@@ -33,7 +33,8 @@
                 FontSize="30"
                 Text="entrar"
                 BackgroundColor="#00e2ff"
-                Clicked="Handle_Clicked"/>
+                Clicked="Handle_Clicked"
+                CornerRadius="40"/>
    
     </StackLayout>
 

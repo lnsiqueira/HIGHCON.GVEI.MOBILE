@@ -31,28 +31,16 @@ namespace HIGHCON.GVEI.MOBILE
                 return;
             }
 
-
-           ; 
-            
             if (password != "x")
             {
                 //"senha invalida"
                 return;
             }
-
-
-
-
-
             //Chama tela HomePage
 
-            //new NavigationPage(new CarPage());
-            //Navigation.PushAsync(new CarPage());
             PopupNavigation.Instance.PopAsync();
 
             Navigation.PushAsync(new HomePage());
-
-
 
         }
     }
