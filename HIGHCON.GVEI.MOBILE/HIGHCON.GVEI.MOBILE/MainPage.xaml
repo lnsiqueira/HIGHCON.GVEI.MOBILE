@@ -1,17 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="HIGHCON.GVEI.MOBILE.MainPage">
+<ContentPage
+    x:Class="HIGHCON.GVEI.MOBILE.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="         Nenê Gragnano Automóveis"
+    mc:Ignorable="d">
 
     <StackLayout BackgroundColor="White">
-        <!-- Place new controls here -->
-     
+        <!--  Place new controls here  -->
+
         <StackLayout BackgroundColor="White">
-            <Image Margin="0,200,0,0" WidthRequest="330" Source="logo1.png"/>
-            <Button TextColor="White"  CornerRadius="40" Text="Login" WidthRequest="125" HeightRequest="50" Margin="0,50,0,0" HorizontalOptions="Center" Clicked="OpenPopup" BackgroundColor="#00e2ff" />
+            <Image
+                Margin="0,140,0,0"
+                Source="logo1.png"
+                WidthRequest="250" />
+            <Button
+                x:Name="botão"
+                Margin="0,50,0,0"
+                BackgroundColor="#51B1F0"
+                Clicked="OpenPopup"
+                CornerRadius="40"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                Text="Login"
+                TextColor="White"
+                WidthRequest="125" />
         </StackLayout>
 
     </StackLayout>

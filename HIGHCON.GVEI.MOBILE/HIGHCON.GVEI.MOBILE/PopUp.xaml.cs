@@ -5,43 +5,50 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using HIGHCON.GVEI.MOBILE.Interfaces;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using HIGHCON.GVEI.MOBILE.Services;
+using HIGHCON.GVEI.MOBILE.Models;
+using Plugin.Connectivity;
 
 namespace HIGHCON.GVEI.MOBILE
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PopUp 
     {
+
+        private readonly INavigation _navigation;
+       // private readonly IApi _api;
+
+       // private Account _account;
+
         public PopUp()
         {
-            InitializeComponent();
-        }
-        void Handle_Clicked(object sender, System.EventArgs e)
+            InitializeComponent();         
+        }       
+
+        public void Handle_Clicked(object sender, System.EventArgs e)
         {
-            //PopUpNavigation.Instance.PopAsync(true);
 
-            string _user = user.Text;
-            string password = senha.Text;
+            status.Text = CrossConnectivity.Current.IsConnected ? null : "Sem acesso a internet!";
 
-            if (_user != "lucas")
+            if (status.Text != null) 
             {
-                //"usuario invalido"
                 return;
             }
 
-            if (password != "x")
+            var _user = ServiceWS.GetUser(user.Text, senha.Text); 
+
+            if (_user != null)
             {
-                //"senha invalida"
-                return;
+                PopupNavigation.Instance.PopAsync();
+                Navigation.PushAsync(new HomePage());
             }
-            //Chama tela HomePage
-
-            PopupNavigation.Instance.PopAsync();
-
-            Navigation.PushAsync(new HomePage());
-
+            else
+            {
+                status.Text = "Usuario ou senha invalido!";
+            }
         }
     }
 }

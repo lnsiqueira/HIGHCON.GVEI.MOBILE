@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:controls="clr-namespace:HIGHCON.GVEI.MOBILE.Controls"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HIGHCON.GVEI.MOBILE.Views.Consult.ConsultDetailPage"
+             NavigationPage.HasNavigationBar="false"
+             BackgroundColor="White">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="#ececec" />
+                <Setter Property="HeightRequest" Value="1" />
+                <Setter Property="Margin" Value="0,15" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <FlexLayout
+                Direction="Column"
+                Padding="20,0"
+            >
+                <Grid
+                    HeightRequest="{OnPlatform Android=250, iOS=300}"
+                    Padding="-20,0"
+                >
+                    <Image 
+                        Source="iconCar.png"
+                        Aspect="AspectFill"
+                    />
+
+                    <ImageButton                      
+                        Source="trip_close.png"
+                        HorizontalOptions="End"
+                        VerticalOptions="Start"
+                        Margin="{OnPlatform Android='0,30,20,0', iOS='0,55,20,0'}"
+                        Clicked="OnGoBackClick"
+                    />
+                </Grid>
+
+                <Label 
+                    Text="{Binding Car.veiculo}"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"
+                    FontSize="Large"
+                    Margin="0,10,0,0"
+                />
+
+                <Label
+                Text="{Binding Car.marca}"
+                    FontAttributes="None"
+                    HorizontalTextAlignment="Center"
+                    FontSize="Large"
+                    Margin="0,5,0,0"
+                   />
+                <Label 
+                    Text="{Binding Trip.CreatedAt, StringFormat='{0:dddd} at {0:hh:mm}'}"
+                    TextColor="Gray"
+                    HorizontalTextAlignment="Center"
+                    Margin="0,0,0,0"
+                />
+
+                <BoxView />
+
+                <FlexLayout
+                    Direction="Row"
+                    HeightRequest="50"
+                    AlignItems="Center"
+                    JustifyContent="SpaceBetween"
+                >
+                    <Label 
+                        Text="Preço"
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                    />
+
+                    <Label 
+                        Text="{Binding Car.valorVenda, StringFormat='{0:C2}'}"
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                    />
+                </FlexLayout>
+                <BoxView />
+
+                <BoxView />
+
+                <FlexLayout
+                    Direction="Row"
+                    HeightRequest="30"
+                    AlignItems="Center"
+                    JustifyContent="SpaceBetween"
+                >
+                    <Label 
+                        Text="Valor da compra"
+                        FontAttributes="None"
+                        FontSize="Medium"
+                    />
+
+                    <Label 
+                        Text="{Binding Car.valorCompra, StringFormat='{0:C2}'}"
+                        FontAttributes="None"
+                        FontSize="Medium"
+                    />
+                </FlexLayout>
+                <BoxView />
+
+                <FlexLayout
+                    Direction="Row"
+                    HeightRequest="100"
+                    AlignItems="Center"
+                    JustifyContent="SpaceBetween"
+                >
+                    <StackLayout>
+                        <Image 
+                            Source="trip_time.png"
+                        />
+                        <Label 
+                            FontSize="Medium"
+                            Text="ano"
+                            TextColor="Gray"
+                            FontAttributes="Bold"
+                            HorizontalTextAlignment="Center"
+                        />
+                        <Label 
+                            Text="{Binding Car.ano}"
+                            FontAttributes="None"
+                            FontSize="Large"
+                            HorizontalTextAlignment="Center"
+                            LineBreakMode="TailTruncation"
+                        />
+                    </StackLayout>
+
+                    <StackLayout>
+                        
+
+                        <Label 
+                            FontSize="Medium"
+                            Text="cor"
+                            FontAttributes="Bold"
+                            TextColor="Gray"
+                            HorizontalTextAlignment="Center"
+                        />
+                        <Label 
+                            Text="{Binding Car.cor}"
+                            FontAttributes="None"
+                            FontSize="Large"
+                            HorizontalTextAlignment="Center"
+                            LineBreakMode="TailTruncation"
+                        />
+                    </StackLayout>
+
+                    <StackLayout>
+                      
+                        <Label 
+                            FontSize="Medium"
+                            Text="placa"
+                            FontAttributes="Bold"
+                            TextColor="Gray"
+                            HorizontalTextAlignment="Center"
+                        />
+                        <Label 
+                            Text="{Binding Car.placa}"
+                            FontAttributes="None"
+                            FontSize="Large"
+                            HorizontalTextAlignment="Center"
+                            LineBreakMode="TailTruncation"
+                        />
+                    </StackLayout>
+
+                </FlexLayout>
+
+                <BoxView />
+
+                <!--<FlexLayout
+                    Direction="Row"
+                    HeightRequest="80"
+                    JustifyContent="SpaceBetween"
+                >
+                    <controls:CustomButton
+                        Text="Report Issue"
+                        Padding="25,0"
+                        Style="{StaticResource CleanButton}"
+                        FontSize="{OnPlatform Android=Default, iOS=Medium}"
+                    />
+                    <controls:CustomButton 
+                        Padding="25,0"
+                        Style="{StaticResource CleanButton}"
+                        FontSize="{OnPlatform Android=Default, iOS=Medium}"
+                    />-->
+
+                <!--</FlexLayout>-->
+            </FlexLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

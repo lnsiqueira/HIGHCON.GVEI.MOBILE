@@ -14,17 +14,17 @@ namespace HIGHCON.GVEI.MOBILE.ViewModels
     {
         public Task Initialization { get; }
 
-        private readonly IApi _api;
+       
         private readonly INavigation _navigation;
 
         public ObservableCollection<Car> Cars { get; private set; }
 
         public Command<Car> GoToDetailsCommand { get; private set; }
 
-        public CarViewModel(INavigation navigation, IApi api)
+        public CarViewModel(INavigation navigation )
         {
             _navigation = navigation;
-            _api = api;
+             
 
             Cars = new ObservableCollection<Car>();
 
@@ -44,10 +44,10 @@ namespace HIGHCON.GVEI.MOBILE.ViewModels
         {
             try
             {
-                var cars = await _api.GetCar();
+               // var cars = await _api.GetCar();
 
-                foreach (var car in cars)
-                    Cars.Add(car);
+               // foreach (var car in cars)
+               //     Cars.Add(car);
             }
             catch (Exception exception)
             {

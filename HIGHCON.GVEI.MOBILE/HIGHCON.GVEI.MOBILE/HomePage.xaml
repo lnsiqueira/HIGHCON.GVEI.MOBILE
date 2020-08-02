@@ -1,16 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage  xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:pages="clr-namespace:HIGHCON.GVEI.MOBILE.Views"
-             mc:Ignorable="d"
-             x:Class="HIGHCON.GVEI.MOBILE.HomePage"
-             Title="   Nenê Gragnano Automóveis">
+<TabbedPage
+    x:Class="HIGHCON.GVEI.MOBILE.HomePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pages="clr-namespace:HIGHCON.GVEI.MOBILE.Views"
+    Title="Nenê Gragnano Automóveis"
+    mc:Ignorable="d">
 
 
     <pages:NewCarPage Title="Carros" Icon="iconCar.png" />
     <pages:ConsultPage Title="Consultar" Icon="iconConsultCar.png" />
-    <pages:AccountPage Title="Contas" Icon="iconConta.png"/>
+    <pages:AccountPage Title="Contas" Icon="iconConta.png" />
 
 </TabbedPage>

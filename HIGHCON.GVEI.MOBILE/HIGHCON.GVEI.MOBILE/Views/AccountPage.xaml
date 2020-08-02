@@ -4,12 +4,80 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="HIGHCON.GVEI.MOBILE.Views.AccountPage">
+             x:Class="HIGHCON.GVEI.MOBILE.Views.AccountPage" 
+>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="FrameOptions" TargetType="Frame">
+                <Setter  Property="Margin" Value="10"/>
+            </Style> 
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Contas em breve disponiveis!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout 
+            Padding="25"
+            Spacing="30">
+            <Frame               
+                HeightRequest="{OnPlatform Android=190, iOS=220}"
+                Padding="0"
+                HasShadow="False"
+                CornerRadius="10">
+
+                <Grid>
+                    <Image
+                        Source="wallet.png"
+                        />
+     
+                </Grid>
+            </Frame>
+
+            <Label
+                Text="Cheques do dia"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                FontSize="Medium"
+            />
+
+            <ScrollView
+                Orientation="Horizontal"    
+            >
+                <FlexLayout
+                    Direction="Row"
+                >
+
+                    <StackLayout>
+                        <Label Text="Cheques para receber"
+                               Margin="25,0,0,0"
+                               HorizontalOptions="Center" />
+                        
+                        <!--<ImageButton
+                    Command="Recibos"
+                    Source="recibo.png"
+                    WidthRequest="{OnPlatform Android=120, iOS=140}"
+                    HeightRequest="{OnPlatform Android=120, iOS=140}"
+                    Margin="25,0,0,0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand" />-->
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label Text="Cheques para pagar"
+                               Margin="40,0,0,0"
+                               HorizontalOptions="Center" />
+
+                        <!--<ImageButton 
+                    Command="Pagamento"
+                    Source="cheque.png"
+                    WidthRequest="{OnPlatform Android=120, iOS=140}"
+                    HeightRequest="{OnPlatform Android=120, iOS=140}"
+                    Margin="40,0,0,0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand" />-->
+                    </StackLayout>
+                </FlexLayout>
+            </ScrollView>
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

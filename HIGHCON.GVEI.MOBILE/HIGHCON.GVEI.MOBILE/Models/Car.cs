@@ -16,8 +16,7 @@ namespace HIGHCON.GVEI.MOBILE.Models
         [JsonProperty("ano")]
         public string ano { get; set; }
 
-        [JsonProperty("modelo")]
-        public string Modelo { get; set; }
+        public string marca { get; set; }
 
         [JsonProperty("dataDaCompra")]
         public DateTime DataCompra { get; set; }

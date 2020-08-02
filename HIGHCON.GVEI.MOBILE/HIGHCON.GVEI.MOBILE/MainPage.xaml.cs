@@ -17,20 +17,15 @@ namespace HIGHCON.GVEI.MOBILE
     {
         public MainPage()
         {
-            InitializeComponent();
-            PopupNavigation.PushAsync(new PopUp());
+            InitializeComponent();           
         }
  
         private void OpenPopup(object sender, EventArgs e)
         {
+   
             PopupNavigation.PushAsync(new PopUp());
         }
 
-        private void ClickedOk(object sender, EventArgs e)
-        {
-          
-            //NavigationPage nav = new NavigationPage(new CarPage());
-            Navigation.PushAsync(new HomePage());
-        }
+        
     }
 }

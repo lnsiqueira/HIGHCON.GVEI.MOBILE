@@ -12,17 +12,17 @@ namespace HIGHCON.GVEI.MOBILE.ViewModels
     {
         public Task Initialization { get; }
 
-        private readonly IApi _api;
+        //private readonly IApi _api;
         private readonly INavigation _navigation;
 
         public ObservableCollection<User> Users { get; private set; }
 
         public Command<User> GoToDetailsCommand { get; private set; }
 
-        public UserViewModel(INavigation navigation, IApi api)
+        public UserViewModel(INavigation navigation)
         {
             _navigation = navigation;
-            _api = api;
+            
 
             Users = new ObservableCollection<User>();
 
@@ -42,10 +42,10 @@ namespace HIGHCON.GVEI.MOBILE.ViewModels
         {
             try
             {
-                var _users = await _api.GetUser();
+               // var _users = await _api.GetUser("luciano", "1234");
 
-                foreach (var user in _users)
-                    Users.Add(user);
+                //foreach (var user in _users)
+                 //   Users.Add(user);
             }
             catch (Exception exception)
             {

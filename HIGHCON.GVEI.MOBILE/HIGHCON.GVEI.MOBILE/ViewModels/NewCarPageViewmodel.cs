@@ -7,21 +7,21 @@ using System.Windows.Input;
 using HIGHCON.GVEI.MOBILE.Interfaces;
 using HIGHCON.GVEI.MOBILE.Models;
 using HIGHCON.GVEI.MOBILE.Views;
-using HIGHCON.GVEI.MOBILE.Views.Consult;
+using HIGHCON.GVEI.MOBILE.Views.NewCar;
 using Xamarin.Forms;
 
 namespace HIGHCON.GVEI.MOBILE.ViewModels
 {
-    public class ConsultPageViewsModels : BaseViewModel, IAsyncInitialization
+   public class NewCarPageViewmodel : BaseViewModel, IAsyncInitialization
     {
         public Task Initialization { get; }
 
-        
+       
         private readonly INavigation _navigation;
 
-        public ObservableCollection<Car> Cars { get; private set; }
+        public ObservableCollection<CarDetail> Car { get; private set; }
 
-        public Command<Car> GoToDetailsCommand { get; private set; }
+        public Command<CarDetail> GoToDetailsCommand { get; private set; }
 
         //Refresh
         private bool _isRefreshing = false;
@@ -58,19 +58,21 @@ namespace HIGHCON.GVEI.MOBILE.ViewModels
         private async Task RefreshData()
         {
             await LoadCarsAsync();
-        }
 
-        public ConsultPageViewsModels(INavigation navigation)
+        }
+        public NewCarPageViewmodel(INavigation navigation )
         {
             _navigation = navigation;
-          
-            Cars = new ObservableCollection<Car>();
+         
 
-            GoToDetailsCommand = new Command<Car>(
-                async (car) => await GoToDetailsAsync(car)
+            Car = new ObservableCollection<CarDetail>();
+
+            GoToDetailsCommand = new Command<CarDetail>(
+                async (CarDetail) => await GoToDetailsAsync(CarDetail)
         );
             Initialization = InitializationAsync();
         }
+
         private async Task InitializationAsync()
         {
             await LoadCarsAsync();
@@ -79,19 +81,20 @@ namespace HIGHCON.GVEI.MOBILE.ViewModels
         {
             try
             {
-               // var cars = await _api.GetCar();
+               // var cars = await _api.GetCarDetail();
 
-               // foreach (var car in cars)
-               //     Cars.Add(car);
+                //foreach (var car in cars)
+                   // Car.Add(car);
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 System.Diagnostics.Debug.WriteLine(exception.Message);
             }
         }
-        private async Task GoToDetailsAsync(Car car)
-        {
-            await _navigation.PushAsync(new ConsultDetailPage(car));
-        }                                      
+            private async Task GoToDetailsAsync(CarDetail carDetail)
+            {
+                await _navigation.PushAsync(new NewCarDetailPage(carDetail));
+            
+        }
     }
 }

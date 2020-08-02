@@ -7,17 +7,17 @@ namespace HIGHCON.GVEI.MOBILE.Models
 {
     public class User
     {
-        [JsonProperty("id")]
-        public int Id { get; set; }
+       // [JsonProperty("usuario")]
+        public string usuario { get; set; }
 
-        [JsonProperty("name")]
-        public string Name { get; set; }
+        //[JsonProperty("nome")]
+        public string nome { get; set; }
 
-        [JsonProperty("login")]
-        public string Login { get; set; }
+        //[JsonProperty("perfil")]
+        public string perfil { get; set; }
 
-        [JsonProperty("password")]
-        public string Password{ get; set; }
+        //[JsonProperty("senha")]
+        public string senha { get; set; }
 
     }
 }

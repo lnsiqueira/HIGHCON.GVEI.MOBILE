@@ -3,24 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using HIGHCON.GVEI.MOBILE.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Newtonsoft.Json;
 using HIGHCON.GVEI.MOBILE.Services;
+
 
 namespace HIGHCON.GVEI.MOBILE.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AccountPage : ContentPage
+    public partial class NewCarPage : ContentPage
     {
-        public AccountPage()
+        public NewCarPage()
         {
             InitializeComponent();
+            BindingContext = new NewCarPageViewmodel(Navigation);
+        }
+
+        public void RefreshData()
+        {
 
         }
     }
-
-    //private void pagamento(object sender, EventArgs e)
-    //{ 
-    //}
 }

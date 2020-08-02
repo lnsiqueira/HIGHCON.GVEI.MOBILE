@@ -4,10 +4,10 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="HIGHCON.GVEI.MOBILE.Views.NewCarPage">
+             x:Class="HIGHCON.GVEI.MOBILE.Views.NewCar.NewCarDetailPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Carros em breve disponieis"
+            <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
